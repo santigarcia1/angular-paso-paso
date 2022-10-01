@@ -11,7 +11,8 @@ import { RouterModule } from '@angular/router';
 import { APP_BASE_HREF } from '@angular/common';
 import { MenuComponent } from './components/menu/menu.component';
 import { ArticulosComponent } from './components/articulos/articulos.component';  
-
+import { CortarCantidadCaracteres } from './pipes/custom-pipe.pipe';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 @NgModule({
   imports: [ 
     BrowserModule, 
@@ -23,9 +24,18 @@ import { ArticulosComponent } from './components/articulos/articulos.component';
       { path: 'inicio', component: InicioComponent },
       { path: 'articulosfamilias', component: ArticulosFamiliasComponent },
       { path: 'articulos', component: ArticulosComponent }
-    ])
+    ]),
+    NgbModule
   ],
-  declarations: [ AppComponent, HelloComponent, InicioComponent, ArticulosFamiliasComponent, MenuComponent, ArticulosComponent ],
+  declarations: [ 
+    AppComponent,
+    HelloComponent, 
+    InicioComponent, 
+    ArticulosFamiliasComponent, 
+    MenuComponent, 
+    ArticulosComponent, 
+    CortarCantidadCaracteres 
+  ],
   bootstrap:    [ AppComponent ],
   providers: [ { provide: APP_BASE_HREF, useValue: "/" } ]
 })

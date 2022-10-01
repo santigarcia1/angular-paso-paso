@@ -7,6 +7,7 @@ export interface Articulo {
     Stock: number;
     FechaAlta: string;
     Activo: boolean;
+    CantidadCaracteresNombre: number;
   };
   export const Articulos: Articulo[] = [
     {
@@ -17,7 +18,8 @@ export interface Articulo {
       IdArticuloFamilia: 9,
       Stock: 898,
       FechaAlta: "2017-01-23T00:00:00",
-      Activo: false
+      Activo: false,
+      CantidadCaracteresNombre: 18
     },
     {
       IdArticulo: 139,
@@ -27,7 +29,8 @@ export interface Articulo {
       IdArticuloFamilia: 7,
       Stock: 668,
       FechaAlta: "2017-01-04T00:00:00",
-      Activo: true
+      Activo: true,
+      CantidadCaracteresNombre: 25
     }
   ];
   

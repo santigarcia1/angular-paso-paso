@@ -45,7 +45,9 @@
         </thead>
         <tbody>
             <tr *ngFor="let item of Items">
-                <td>{{item.Nombre | uppercase}}</td>
+                <td container="body" ngbTooltip="{{'Modelo: ' + (item.Nombre | cortarCantidadCaracteres: item.CantidadCaracteresNombre:item.Nombre.length)}}">
+                    {{item.Nombre | cortarCantidadCaracteres: 0:item.CantidadCaracteresNombre }}
+                </td>
                 <td class="text-right">{{item.Precio | currency}}</td>
                 <td class="text-right">{{item.Stock}}</td>
                 <td>{{item.FechaAlta| date:'dd/MM/yyyy'}}</td>
