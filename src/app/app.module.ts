@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from "@angular/common/http";
+import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
+import { MyInterceptor } from "./shared/my-interceptor";
 import { ReactiveFormsModule } from "@angular/forms";
 import { AppComponent } from './app.component';
 import { HelloComponent } from './hello.component';
@@ -13,6 +14,7 @@ import { MenuComponent } from './components/menu/menu.component';
 import { ArticulosComponent } from './components/articulos/articulos.component';  
 import { CortarCantidadCaracteres } from './pipes/custom-pipe.pipe';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ModalDialogComponent } from './components/modal-dialog/modal-dialog.component';
 @NgModule({
   imports: [ 
     BrowserModule, 
@@ -34,9 +36,13 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     ArticulosFamiliasComponent, 
     MenuComponent, 
     ArticulosComponent, 
-    CortarCantidadCaracteres 
+    CortarCantidadCaracteres, 
+    ModalDialogComponent 
   ],
   bootstrap:    [ AppComponent ],
-  providers: [ { provide: APP_BASE_HREF, useValue: "/" } ]
+  providers: [
+    { provide: APP_BASE_HREF, useValue: "/" },
+    { provide: HTTP_INTERCEPTORS, useClass: MyInterceptor, multi: true }
+  ],
 })
 export class AppModule { }
