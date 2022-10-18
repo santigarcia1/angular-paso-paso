@@ -1,14 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
-<<<<<<< HEAD
-import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
-import { MyInterceptor } from "./shared/my-interceptor";
-import { ReactiveFormsModule } from "@angular/forms";
-=======
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { MyInterceptor } from './shared/my-interceptor';
 import { ReactiveFormsModule } from '@angular/forms';
->>>>>>> f0900dbcf4c0cd112c0d82bf2475b9ba66af0846
 import { AppComponent } from './app.component';
 import { HelloComponent } from './hello.component';
 import { InicioComponent } from './components/inicio/inicio.component';
@@ -20,6 +15,7 @@ import { ArticulosComponent } from './components/articulos/articulos.component';
 import { CortarCantidadCaracteres } from './pipes/custom-pipe.pipe';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ModalDialogComponent } from './components/modal-dialog/modal-dialog.component';
+
 @NgModule({
   imports: [
     BrowserModule,
@@ -36,18 +32,18 @@ import { ModalDialogComponent } from './components/modal-dialog/modal-dialog.com
   ],
   declarations: [
     AppComponent,
-    HelloComponent, 
-    InicioComponent, 
-    ArticulosFamiliasComponent, 
-    MenuComponent, 
-    ArticulosComponent, 
-    CortarCantidadCaracteres, 
-    ModalDialogComponent 
+    HelloComponent,
+    InicioComponent,
+    ArticulosFamiliasComponent,
+    MenuComponent,
+    ArticulosComponent,
+    CortarCantidadCaracteres,
+    ModalDialogComponent,
   ],
-  bootstrap:    [ AppComponent ],
+  bootstrap: [AppComponent],
   providers: [
-    { provide: APP_BASE_HREF, useValue: "/" },
-    { provide: HTTP_INTERCEPTORS, useClass: MyInterceptor, multi: true }
+    { provide: APP_BASE_HREF, useValue: '/' },
+    { provide: HTTP_INTERCEPTORS, useClass: MyInterceptor, multi: true },
   ],
 })
 export class AppModule {}
